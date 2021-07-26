@@ -1,8 +1,8 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import PokemonResponse from '../../apis/dtos/pokemonResponse';
-import PokemonApi from '../../apis/pokemonApi';
+import PokemonResponse from '../../services/dtos/pokemonResponse';
+import PokemonService from '../../services/pokemonService';
 import styles from '../../styles/Home.module.css';
 
 export default function PokemonDetail({ pokemon }: { pokemon: PokemonResponse }) {
@@ -65,7 +65,7 @@ export default function PokemonDetail({ pokemon }: { pokemon: PokemonResponse })
   );
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await PokemonApi.getPokemons();
+  const { data } = await PokemonService.getPokemons();
   const pokemons = data.results;
 
   const paths = pokemons.map((pokemon: PokemonResponse) => ({
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
   console.log(context);
   const name = context.params?.name as string;
 
-  const pokemon = await PokemonApi.getPokemonByName(name);
+  const pokemon = await PokemonService.getPokemonByName(name);
 
   return {
     props: { name, pokemon },

@@ -1,7 +1,7 @@
 import api from './api';
 import PokemonResponse from './dtos/pokemonResponse';
 
-class PokemonApi {
+class PokemonService {
   static getPokemons = async () => {
     return await api.get('pokemon?limit=10&offset=200');
   };
@@ -12,4 +12,4 @@ class PokemonApi {
   };
 }
 
-export default PokemonApi;
+export default PokemonService;
