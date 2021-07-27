@@ -1,13 +1,12 @@
-import Link from 'next/link'
+import LinkButton from '../../atoms/LinkButton/LinkButton';
+import NavbarContainer from './Navbar.styles';
 
 const Navbar = () => {
-    return (
-        <nav>
-            <Link href="/">
-                <a>Página inicial</a>
-            </Link>
-        </nav>
-    )
-}
+  return (
+    <NavbarContainer>
+      <LinkButton href="/" name="Página inicial" />
+    </NavbarContainer>
+  );
+};
 
 export default Navbar;
