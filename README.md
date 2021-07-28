@@ -5,6 +5,9 @@
 <p align="center">
   A simple example of how to consume PokeApi on Next.js
 </p>
+<p align="center">
+  <img src="https://img.shields.io/github/deployments/yuriwithowsky/pokenext/production?label=vercel&logo=vercel&logoColor=vercel"/>
+</p>
 
 ## Introduction
 A simple Next.js application to test integration with [PokéApi](https://pokeapi.co/)
